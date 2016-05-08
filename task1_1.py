@@ -1,3 +1,6 @@
+#Find out what is the font of the text using the images in the fonts folder and the SSD measure.
+#Explain the process and show the results.
+
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
