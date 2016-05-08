@@ -17,3 +17,18 @@ TimesNewRoman = os.path.join(Fonts, "TimesNewRoman.jpg")
 Verdana = os.path.join(Fonts, "Verdana.jpg")
 
 text = os.path.join(Q1, "Text.jpg")
+
+#size image path
+
+sizes = os.path.join(Q1, "Sizes")
+
+size_10 = os.path.join(sizes, "10.jpg")
+
+size_11 = os.path.join(sizes, "11.jpg")
+
+size_12 = os.path.join(sizes, "12.jpg")
+
+size_14 = os.path.join(sizes, "14.jpg")
+
+size_16 = os.path.join(sizes, "16.jpg")
+
