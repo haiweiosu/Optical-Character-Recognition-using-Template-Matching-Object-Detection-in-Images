@@ -42,5 +42,11 @@ big_A = os.path.join(Q1, "big_A.jpg")
 
 big_T = os.path.join(Q1, "big_T.jpg")
 
+#letter c and k for 1.5
+
+letter_c = os.path.join(Q1, "c.jpg")
+
+letter_k = os.path.join(Q1, "k.jpg")
+
 
 
