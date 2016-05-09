@@ -32,3 +32,15 @@ size_14 = os.path.join(sizes, "14.jpg")
 
 size_16 = os.path.join(sizes, "16.jpg")
 
+#letter t and a image
+
+small_a = os.path.join(Q1, "small_a.jpg")
+
+small_t = os.path.join(Q1, "small_t.jpg")
+
+big_A = os.path.join(Q1, "big_A.jpg")
+
+big_T = os.path.join(Q1, "big_T.jpg")
+
+
+
