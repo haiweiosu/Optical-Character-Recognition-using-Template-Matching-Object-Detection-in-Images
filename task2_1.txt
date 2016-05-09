@@ -1,0 +1,26 @@
+Propose a method for finding a given template image in a set of query images. Any method you
+propose is fine, as long as you explain and motivate it clearly. Before you code it and test it,
+please write the following:
+	a. The motivation to the method you propose.
+	b. The guiding principles of your approach.
+	c. In what cases do you expect it to succeed or fail?
+	d. What are the advantages and disadvantages of your approach?
+
+a). When we are dealing with image object detection. We always have to take care of two sub-problems: (1). not all instance of target object has the exact same appearance in difference images. (2). We could count the same detected objective many times in the same training image due to strong overlapped image window. 
+	According to the paper by Wei et.al, sliding window alorithm is an efficient tool to do object detection and maximum reduce the issues mentioned above. 
+
+b). First, train a classifier on a n x m image window. 
+	Second, input images are either positive or negative, meaning that positive inputs contain target objective and negative inputs do not contain it. 
+	Then, choose custome threshold and unit step in both x and y directions. 
+	Next, construct an image pyramid and apply above threshold and unit step in each level of pyramid. 
+	In the end, the loop will generate a ranked list reflecting the strength of response of window. Remove the repeated window count in list. 
+
+	The detected objects are stored in the list. 
+
+c). The success of this method will determined on window size selection and unit step in 2d direction. If choosing windows too small, we'll have more steps to scan the window maybe loose some part of object detection. If choosing window too big, we may loose track of object. 
+
+d). The disadvantage is high computation cost if input data is large. The advantag of this approach high accuracy. 
+
+
+
+
