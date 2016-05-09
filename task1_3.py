@@ -14,7 +14,7 @@ from config import small_a, small_t, big_A, big_T, text
 
 img = cv2.imread(text, 0)
 
-template = small_a
+template = big_T
 template2 = cv2.imread(template, 0)
 w, h = template2.shape[::-1]
 img2 = img.copy()
@@ -22,7 +22,7 @@ img2 = img.copy()
 #Apply template Matching
 res = cv2.matchTemplate(img2,template2,cv2.TM_CCOEFF_NORMED)
 
-threshold = 0.69
+threshold = 0.729816
 loc = np.where(res >= threshold)
 for pt in zip(*loc[::-1]):
 	 cv2.rectangle(img2, pt, (pt[0] + w, pt[1] + h), (0,0,255), 2)
