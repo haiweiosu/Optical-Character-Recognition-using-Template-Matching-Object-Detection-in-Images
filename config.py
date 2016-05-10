@@ -48,5 +48,23 @@ letter_c = os.path.join(Q1, "c.jpg")
 
 letter_k = os.path.join(Q1, "k.jpg")
 
+#Q2 image
+
+Q2 = os.path.join(DATA_PATH, "Q2")
+
+Roadsign = os.path.join(Q2, "Roadsign")
+
+roadtemp = os.path.join(Roadsign, "template.jpg")
+
+road1 = os.path.join(Roadsign, "image1.jpg")
+
+road2 = os.path.join(Roadsign, "image2.jpg")
+
+Starbucks = os.path.join(Q2, "Starbucks")
+
+Superman = os.path.join(Q2, "Superman")
+
+
+
 
 
