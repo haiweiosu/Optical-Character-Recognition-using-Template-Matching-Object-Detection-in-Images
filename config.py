@@ -56,15 +56,42 @@ Roadsign = os.path.join(Q2, "Roadsign")
 
 roadtemp = os.path.join(Roadsign, "template.jpg")
 
-road1 = os.path.join(Roadsign, "image1.jpg")
+resize_image = os.path.join(Roadsign, "Resize_image")
 
-road2 = os.path.join(Roadsign, "image2.jpg")
+road1 = os.path.join(resize_image, "image_1.jpg")
+
+road2 = os.path.join(resize_image, "image_2.jpg")
+
+road3 = os.path.join(resize_image, "image_3.jpg")
+
+road4 = os.path.join(resize_image, "image_4.jpg")
+
+road5 = os.path.join(resize_image, "image_5.jpg")
+
+road6 = os.path.join(resize_image, "image_6.jpg")
+
+road7 = os.path.join(resize_image, "image_7.jpg")
+
+road8 = os.path.join(resize_image, "image_8.jpg")
+
+road9 = os.path.join(resize_image, "image_9.jpg")
+
+road10 = os.path.join(resize_image, "image_10.jpg")
+
+
+negative_training_1 = os.path.join(Roadsign, "negative_training_1.jpg")
+
+negative_training_2 = os.path.join(Roadsign, "negative_training_2.jpg")
+
+negative_training_3 = os.path.join(Roadsign, "negative_training_3.jpg")
+
+negative_training_4 = os.path.join(Roadsign, "negative_training_4.jpg")
+
+negative_training_5 = os.path.join(Roadsign, "negative_training_5.jpg")
+
+negative_training_6 = os.path.join(Roadsign, "negative_training_6.jpg")
 
 Starbucks = os.path.join(Q2, "Starbucks")
 
 Superman = os.path.join(Q2, "Superman")
-
-
-
-
 

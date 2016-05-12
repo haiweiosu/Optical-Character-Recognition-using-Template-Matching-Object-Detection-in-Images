@@ -8,30 +8,25 @@ import matplotlib.pyplot as plt
 
 from skimage.feature import hog
 from skimage import data, color, exposure
-from config import roadtemp
+from config import roadtemp, road1, road2, road3, road4, road5, road6, road7, road8, road9, road10
 from PIL import Image
 import numpy as np
+import cv2
 
+im_list = [roadtemp, road1, road2, road3, road4, road5, road6, road7, road8]
+hog_image_list = []
+test_image_list = [road9, road10]
+test_hog_image_list = []
 
-im = Image.open(roadtemp)
-pix = np.array(im)
-image = color.rgb2gray(pix)
+for element in im_list:
+	hog = cv2.HOGDescriptor()
+	im = cv2.imread(element)
+	h = hog.compute(im)
+	hog_image_list.append(h)
 
-fd, hog_image = hog(image, orientations=8, pixels_per_cell=(16, 16),
-                    cells_per_block=(1, 1), visualise=True)
+for element2 in test_image_list:
+	hog = cv2.HOGDescriptor()
+	im = cv2.imread(element2)
+	h = hog.compute(im)
+	test_hog_image_list.append(h)
 
-fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(8, 4), sharex=True, sharey=True)
-
-ax1.axis('off')
-ax1.imshow(image, cmap=plt.cm.gray)
-ax1.set_title('Input image')
-ax1.set_adjustable('box-forced')
-
-# Rescale histogram for better display
-hog_image_rescaled = exposure.rescale_intensity(hog_image, in_range=(0, 0.02))
-
-ax2.axis('off')
-ax2.imshow(hog_image_rescaled, cmap=plt.cm.gray)
-ax2.set_title('Histogram of Oriented Gradients')
-ax1.set_adjustable('box-forced')
-plt.show()
