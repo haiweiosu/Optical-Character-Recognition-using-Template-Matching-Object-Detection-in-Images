@@ -16,11 +16,12 @@ from imagesearch.helpers import pyramid
 from imagesearch.helpers import sliding_window
 from task2_2_step_3 import lin_svc
 from config import negative_training_1, negative_training_2, negative_training_3, negative_training_4
-from config import road9, road10
+from config import road9, road10, negative_training_1, road1
 from skimage.feature import hog
 from PIL import Image
 from skimage import color, exposure
 from sklearn.svm.libsvm import decision_function
+from sklearn import svm
 
 import argparse
 import time
@@ -28,7 +29,8 @@ import cv2
 import numpy as np
 
 # load the image and define the window width and height
-image = cv2.imread(road10)
+image = cv2.imread(road1)
+
 (winW, winH) = (225, 225)
 false_positives = []
 # loop over the image pyramid
@@ -45,25 +47,18 @@ for resized in pyramid(image, scale=1.5):
 		# WINDOW
 
 		hog = cv2.HOGDescriptor()
-		h = hog.compute(window)
+		h = hog.compute(resized)
 
-		print len(h)
 
-		# prediction = lin_svc.predict(hist_of_gradient(window))
-		# if false_pos, then append to false_positives
+		# lin_svc = svm.LinearSVC(random_state = 0).fit(X, Y)
 
 		prediciton = lin_svc.predict(h.reshape(1,-1))
 
-		print prediciton
-		# if prediciton[0] == 1:
-		# 	proba = decision_function(h)
-		# 	false_positives.append(proba)
-
-
+		print(prediciton)
 
 		# # since we do not have a classifier, we'll just draw the window
 		clone = resized.copy()
-		cv2.rectangle(clone, (x, y), (x + winW, y + winH), (0, 255, 0), 2)
+		cv2.rectangle(clone, (x, y), (x + 120, y + 120), (0, 255, 0), 2)
 		cv2.imshow("Window", clone)
 		cv2.waitKey(1)
-		time.sleep(12)
+		time.sleep(5)

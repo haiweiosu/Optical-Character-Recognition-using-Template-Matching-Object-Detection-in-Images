@@ -3,6 +3,7 @@ import cv2
 from matplotlib import pyplot as plt
 from config import roadtemp, road1, road2, road3, road4
 
+
 img1 = cv2.imread(roadtemp,0)          # queryImage
 img2 = cv2.imread(road1,0)             # trainImage
 
