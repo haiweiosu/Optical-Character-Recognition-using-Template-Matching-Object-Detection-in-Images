@@ -1,13 +1,3 @@
-#step 4
-
-#Apply hard-negative mining. For each image and each possible scale of 
-#each image in your negative training set, apply the sliding window technique 
-#and slide your window across the image. At each window compute your HOG descriptors 
-#and apply your classifier. If your classifier (incorrectly) classifies a given window 
-#as an object (and it will, there will absolutely be false-positives), 
-#record the feature vector associated with the false-positive patch along with the 
-#probability of the classification. This approach is called hard-negative mining.
-
 # USAGE
 # python sliding_window.py --image images/adrian_florida.jpg 
 
@@ -48,19 +38,19 @@ for resized in pyramid(image, scale=1.5):
 
 		hog = cv2.HOGDescriptor()
 		h = hog.compute(resized)
-		print(h)
+		print(h.flatten())
 
 		prediciton = lin_svc.predict(h.reshape(1,-1))
 
 		print(prediciton)
 
-		# threshold = 0.4
-		# loc = np.where( h >= threshold)
-		# print(loc)
+		threshold = 0.2
+		loc = np.where( h >= threshold)
 
 		# # since we do not have a classifier, we'll just draw the window
 		clone = resized.copy()
-		cv2.rectangle(clone, (x,y), (x + 130, y + 130), (0, 255, 0), 2)
+		for pt in zip(*loc[::-1]):
+			cv2.rectangle(clone, pt, (pt[0] + 50, pt[1] + 50), (0, 255, 0), 2)
 		cv2.imshow("Window", clone)
 		cv2.waitKey(1)
 		time.sleep(10)

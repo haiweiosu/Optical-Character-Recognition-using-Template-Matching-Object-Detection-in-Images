@@ -93,5 +93,38 @@ negative_training_6 = os.path.join(Roadsign, "negative_training_6.jpg")
 
 Starbucks = os.path.join(Q2, "Starbucks")
 
+resize_image_star = os.path.join(Starbucks, "resize_image")
+
+startemp = os.path.join(resize_image_star, "template.jpg")
+
+star1 = os.path.join(resize_image_star, "image1.jpg")
+
+star2 = os.path.join(resize_image_star, "image2.jpg")
+
+star3 = os.path.join(resize_image_star, "image3.jpg")
+
+star4 = os.path.join(resize_image_star, "image4.jpg")
+
+star5 = os.path.join(resize_image_star, "image5.jpg")
+
+star6 = os.path.join(resize_image_star, "image6.jpg")
+
+star7 = os.path.join(resize_image_star, "image7.jpg")
+
+star8 = os.path.join(resize_image_star, "image8.jpg")
+
+neg_image1 = os.path.join(resize_image_star, "neg_image1.jpg")
+
+neg_image2 = os.path.join(resize_image_star, "neg_image2.jpg")
+
+neg_image3 = os.path.join(resize_image_star, "neg_image3.jpg")
+
+neg_image4 = os.path.join(resize_image_star, "neg_image4.jpg")
+
+neg_image5 = os.path.join(resize_image_star, "neg_image5.jpg")
+
+neg_image6 = os.path.join(resize_image_star, "neg_image6.jpg")
+
+
 Superman = os.path.join(Q2, "Superman")
 

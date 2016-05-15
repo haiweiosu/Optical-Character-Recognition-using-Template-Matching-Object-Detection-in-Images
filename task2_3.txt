@@ -1,0 +1,4 @@
+Based on your experimental results, revisit item 1 and assess your predictions. Associate
+examples from your results with items on your list of pros & cons. Explain the success/failure
+cases you got.
+
